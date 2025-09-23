@@ -1,0 +1,104 @@
+Of course. Let's finalize the plan for the Decomposition Tree.
+
+The best and final solution to fix the inconsistency is to create a clean Customer Table. This table will have only one row for every customer, with their single, definitive information.
+
+Why This is the Solution
+This new table will act as a "master list" of your customers. Because each customer appears only once, the Decomposition Tree will be able to count them correctly, and all the numbers will add up perfectly. This is the professional standard for this type of analysis.
+
+Final Step-by-Step Guide
+Step 1: Open Power Query
+In Power BI's Home ribbon, click "Transform data".
+
+Step 2: Duplicate Your Main Query
+In the Queries pane on the left, right-click on your df_time_cleaned query.
+
+Select Duplicate.
+
+Right-click the new query and Rename it to Customer Table.
+
+Step 3: Group to Find Each Customer's Last Purchase
+With the Customer Table query selected, click on the Customer_ID column header.
+
+Go to the Home ribbon and click Group By.
+
+Fill out the window like this:
+
+New column name: Last_Purchase
+
+Operation: Max
+
+Column: Date
+
+Click OK.
+
+Step 4: Merge to Get the Full Customer Details
+With your Customer Table query still selected, click Merge Queries in the Home ribbon.
+
+In the Merge window:
+
+Select df_time_cleaned as the second table to merge with.
+
+Click on the Customer_ID column in both tables to match them.
+
+Hold the CTRL key and click on the Last_Purchase and Date columns to create a second match.
+
+Join Kind: Left Outer.
+
+Click OK.
+
+Step 5: Expand and Clean Up
+A new column df_time_cleaned will appear. Click the expand icon (↔️) on that column header.
+
+Uncheck "Use original column name as prefix".
+
+Select the customer attribute columns you need: Customer_Segment, Income, Country, Gender, Age, Name. Click OK.
+
+Right-click and Remove the Last_Purchase column.
+
+
+step6: remove dupliacts from customer_id is column
+
+Step 7: Load the Data and Build the Relationship
+Click "Close & Apply" in the top-left corner.
+
+Go to the Model View.
+
+Create a one-to-many relationship by dragging Customer_ID from your new Customer Table to Customer_ID in df_time_cleaned.
+
+How to Fix Your Decomposition Tree
+Now, go to your dashboard and click on your Decomposition Tree visual. Configure it using fields from your new, clean table:
+
+Analyze: Customer_ID (from your new Customer Table). Make sure its aggregation is set to Count (Distinct).
+
+Explain by: Customer_Segment, Income, Country (all from your new Customer Table).
+
+This will permanently solve the inconsistency problem for this visual and any others on your "Customer Insights" dashboard.  
+
+
+
+Repeat vs One-Time Count = 
+VAR CustomersInContext = CAlCULATETABLE(VALUES('Customer_Table'[Customer_ID]))
+VAR RepeatCustomers =
+    FILTER (
+        CustomersInContext,
+        CALCULATE ( COUNT ( 'df_time_cleaned'[Transaction_ID] ) ) > 1
+    )
+VAR Result =
+    IF (
+        HASONEVALUE ( 'output_repeat_customers'[Customer_Type] ),
+        SWITCH (
+            VALUES ( 'output_repeat_customers'[Customer_Type] ),
+            "Repeat Customer", COUNTROWS ( RepeatCustomers ),
+            "One-time Customer", COUNTROWS ( CustomersInContext ) - COUNTROWS ( RepeatCustomers )
+        )
+    )
+RETURN
+    Result
+
+
+
+
+
+
+
+
