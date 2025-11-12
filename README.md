@@ -1,4 +1,3 @@
----
 ## 🛍️ **Customer Preference and Trend Analytics for Retail Sector**
 
 **A Retail Business Intelligence Project | Semester 7 Minor Project**
@@ -12,6 +11,7 @@
 **Industry Mentor:** Mr. Divyang Shah (Founder & CEO, Electrosoft)
 
 ---
+
 
 ## 🎯 **Objective**
 
