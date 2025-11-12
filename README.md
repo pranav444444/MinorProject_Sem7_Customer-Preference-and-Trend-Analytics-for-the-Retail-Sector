@@ -241,17 +241,6 @@ To analyze customer preferences, purchasing behavior, and transaction trends usi
 
 ---
 
-## 📷 **Dashboard Image Placement (for README file visuals)**
-
-| Dashboard   | Recommended Image                                               | Placement                                      |
-| ----------- | --------------------------------------------------------------- | ---------------------------------------------- |
-| Dashboard 1 | Full dashboard screenshot showing revenue by country/city/month | After “Recommendations” section of Dashboard 1 |
-| Dashboard 2 | Customer Insights visuals (Age, Income, Loyalty)                | After “Recommendations” of Dashboard 2         |
-| Dashboard 3 | Product category + Brand + Ratings scatter                      | After RCA of Dashboard 3                       |
-| Dashboard 4 | Feedback sentiment + Ratings + Payment + Shipping               | After RCA of Dashboard 4                       |
-
----
-
 ## 🧾 **Citation**
 
 Dataset Source:
