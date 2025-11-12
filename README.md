@@ -1,11 +1,15 @@
 ---
 
-🛍️ **Customer Preference and Trend Analytics for Retail Sector**
+## 🛍️ **Customer Preference and Trend Analytics for Retail Sector**
 
 **A Retail Business Intelligence Project | Semester 7 Minor Project**
+
 **Author:** Pranav Patel (22CS060)
+
 **Department of Computer Science and Engineering, CSPIT-CSE**
+
 **Internal Guide:** Prof. Akshita Kadam
+
 **Industry Mentor:** Mr. Divyang Shah (Founder & CEO, Electrosoft)
 
 ---
