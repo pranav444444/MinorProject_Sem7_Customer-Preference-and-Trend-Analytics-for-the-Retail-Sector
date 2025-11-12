@@ -254,5 +254,3 @@ Dataset Source:
 This project demonstrates the **complete data analytics lifecycle** — from data cleaning and EDA in Python to SQL integration and advanced Power BI dashboards — resulting in a **360° retail analytics solution** that connects customer behavior, product performance, and operational efficiency in one interactive system.
 
 
-`![Dashboard 1](images/dashboard1.png)`
-and be ready to paste directly.
