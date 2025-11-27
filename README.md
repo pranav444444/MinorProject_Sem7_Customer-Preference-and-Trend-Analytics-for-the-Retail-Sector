@@ -63,6 +63,12 @@ To analyze customer preferences, purchasing behavior, and transaction trends usi
 
 ---
 
+## 🧩 **Entity Relationship Diagram (Power BI Data Model)**
+
+<img width="1010" height="727" alt="image" src="https://github.com/user-attachments/assets/0f1e5a3d-d479-4477-97ce-400ed07f2151" />
+
+-> This Power BI data model connects cleaned transactional data (df_time_cleaned) with multiple dimension tables (Customer, Product, Calendar, and supporting outputs) to enable efficient DAX calculations and interactive visualizations.
+
 ## 📊 **Dashboard Summaries**
 
 ---
