@@ -1,52 +1,262 @@
-Customer Preference and Trend Analytics for the Retail Sector
-Project Summary
-This end-to-end data analytics project analyzes a retail dataset of over 290,000 transactions to uncover key insights into customer behavior, product performance, and operational trends. The project encompasses the entire analytics lifecycle, from data cleaning and preprocessing in Python to the development of a suite of four interactive dashboards in Power BI. The final result is a powerful business intelligence tool for data-driven decision-making.
+## 🛍️ **Customer Preference and Trend Analytics for Retail Sector**
 
-Phases of the Project
-Phase 1: Data Cleaning & Preprocessing (Python)
-Handled missing values, standardized data formats, and removed duplicate records to ensure data quality.
+**A Retail Business Intelligence Project | Semester 7 Minor Project**
 
-Engineered new features from raw data, such as Time_Slot, Year, and Month, to enable deeper time-based analysis.
+**Author:** Pranav Patel (22CS060)
 
-Filtered an initial dataset of ~293,000 records down to a high-quality, analysis-ready dataset of ~177,000 records with valid temporal data.
+**Department of Computer Science and Engineering, CSPIT-CSE**
 
-Phase 2: Exploratory Data Analysis (EDA) (Python)
-Conducted statistical summaries and developed 14 key visualizations using Matplotlib and Seaborn to uncover initial patterns in sales, customer demographics, and product preferences.
+**Internal Guide:** Prof. Akshita Kadam
 
-This phase was crucial for identifying significant data integrity issues, such as inconsistent customer attributes (Gender, Age, Income) for the same Customer_ID.
+**Industry Mentor:** Mr. Divyang Shah (Founder & CEO, Electrosoft)
 
-Phase 3: SQL Analysis & Data Modeling (Python/SQLite & Power BI)
-Utilized SQL to perform advanced aggregations and diagnostic queries, confirming the data inconsistencies found in the EDA phase.
+---
 
-Designed and implemented a robust Star Schema data model in Power BI to create a reliable analytical framework.
 
-Built clean Dimension Tables (Customer Table, Product Table, Calendar) in Power Query to establish a "single source of truth" for all customer, product, and date attributes, resolving all previously identified data quality issues.
+## 🎯 **Objective**
 
-Phase 4: Dashboard Development (Power BI)
-Developed a suite of four interconnected, interactive dashboards:
+To analyze customer preferences, purchasing behavior, and transaction trends using data-driven dashboards, enabling the retail business to make informed decisions that improve profitability, marketing strategy, and customer retention.
 
-Global Sales Overview: High-level view of revenue and geographic performance.
+---
 
-Customer Insights: Deep-dive into customer demographics, loyalty, and value.
+## 🧩 **Dataset Information**
 
-Product Performance: Analysis of top-selling products and brands.
+**Source:** [Kaggle – Retail Transactional Dataset](https://www.kaggle.com/datasets/bhavikjikadara/retail-transactional-dataset)
+**Records:** ~3,00,000 transaction and customer records
+**Columns:** 28 (transactional, demographic & feedback attributes)
+**Key Fields:**
+`Customer_ID, Gender, Age, Income, Product_Category, Payment_Method, Ratings, Feedback, Date, Time, Total_Amount`
+**Purpose:** To understand customer purchasing behavior, segment performance, and operational efficiency.
 
-Operational Insights: Overview of shipping, payments, and customer feedback.
+---
 
-Authored over 15 DAX measures to create dynamic KPIs for real-time performance tracking.
+## ⚙️ **Project Workflow**
 
-Key Insights
-Identified a strong customer repeat rate of 68.2%, indicating a loyal customer base that drives month-to-month activity.
+```
+1️⃣ Data Collection → Kaggle Retail Dataset (~3 lakh records)
+2️⃣ Data Cleaning & Preprocessing (Python)
+      - Removed duplicates, handled missing values
+      - Standardized date/time, created new features (Time_Slot, Customer_Segment)
+3️⃣ Exploratory Data Analysis (EDA) in Python
+      - 14 charts: revenue trends, demographics, product mix, and feedback
+4️⃣ SQL Integration (SQLite3)
+      - Built star schema (Fact_Transaction, Dim_Customer, Dim_Product, Dim_Date)
+      - Extracted structured tables (output_*.csv)
+5️⃣ Power BI Visualization
+      - Developed 4 interactive dashboards with slicers, DAX KPIs & storytelling
+6️⃣ Insights, RCA & Recommendations
+      - Actionable business insights and performance improvement strategies
+```
 
-Uncovered significant data integrity issues in the source data, correcting a 43% over-counting discrepancy in demographic analysis.
+---
 
-Revealed distinct purchasing patterns across regions and customer segments, such as "Grocery" being the top product category in the USA, while "Electronics" leads globally.
+## 🧠 **Tools & Technologies Used**
 
-Technical Stack
-Data Cleaning & Analysis: Python (Pandas, Matplotlib, Seaborn)
+| Tool                          | Purpose                                                 |
+| ----------------------------- | ------------------------------------------------------- |
+| **Python (Jupyter Notebook)** | Data cleaning, preprocessing, EDA                       |
+| **SQLite3**                   | Data storage, relational modeling, SQL querying         |
+| **Power BI**                  | Dashboard creation & storytelling                       |
+| **Power Query**               | Data transformation & model integration                 |
+| **DAX**                       | Calculated measures (e.g., Delivery Score, Repeat Rate) |
+| **Excel**                     | Intermediate data validation                            |
 
-Database & Querying: SQLite
+---
 
-Business Intelligence & Visualization: Microsoft Power BI (Power Query, DAX)
+## 🧩 **Entity Relationship Diagram (Power BI Data Model)**
 
-Version Control: Git & GitHub
+<img width="1010" height="727" alt="image" src="https://github.com/user-attachments/assets/0f1e5a3d-d479-4477-97ce-400ed07f2151" />
+
+-> This Power BI data model connects cleaned transactional data (df_time_cleaned) with multiple dimension tables (Customer, Product, Calendar, and supporting outputs) to enable efficient DAX calculations and interactive visualizations.
+
+## 📊 **Dashboard Summaries**
+
+---
+
+### 🟣 **Dashboard 1 – Global Sales Overview**
+
+**Purpose:** Track total revenue, orders, and customer performance by region, city, and month.
+
+**Key KPIs:**
+
+* Total Revenue: ₹242.61M
+* Total Orders: 177K
+* Unique Customers: 77K
+* Avg Order Value (AOV): ₹1.37K
+
+**Insights & RCA:**
+
+* USA and UK lead in revenue; Chicago is top city.
+* Spikes in March–April & October–November.
+* Pending/Processing orders (~35%) slow deliveries.
+
+**Recommendations:**
+
+* Run campaigns in Feb & June (low months).
+* Improve warehouse automation to reduce Pending orders.
+* Expand marketing in Canada & Australia.
+
+<img width="1340" height="751" alt="image" src="https://github.com/user-attachments/assets/843742e4-f1f8-4412-81cb-3089e938d096" />
+
+
+---
+
+### 🟡 **Dashboard 2 – Customer Insights**
+
+**Purpose:** Understand demographics, repeat behavior, and income-based spending.
+
+**Key KPIs:**
+
+* Repeat Customers: 68%
+* Avg Revenue/Customer: ₹3.14K
+* Top Age Group: 18–25 years
+* Top Income Group: Medium
+
+**Insights & RCA:**
+
+* High retention but low upselling potential.
+* Medium-income & young customers dominate sales.
+* AOV stable across groups → underused cross-selling.
+
+**Recommendations:**
+
+* Strengthen loyalty programs for repeat & premium customers.
+* Promote bundles and personalized upsells.
+* Focus digital ads on 18–25 demographic.
+
+<img width="1338" height="747" alt="image" src="https://github.com/user-attachments/assets/7f002e7e-4d88-4ff9-a6ff-08a6158f4045" />
+
+
+---
+
+### 🟢 **Dashboard 3 – Product Performance & Preferences**
+
+**Purpose:** Analyze category & brand performance, popularity vs quality, and gender-based spend.
+
+**Key KPIs:**
+
+* Total Products Sold: 177K
+* Avg Rating: 3.17★
+* Top Category: Electronics (₹57M)
+* Top Brand: Pepsi (₹25M)
+
+**RCA Summary:**
+
+* Electronics & Grocery dominate revenue but moderate ratings.
+* Brand concentration among top 5 brands.
+* Male customers contribute 60–65% of revenue.
+* Stable monthly trends with slight seasonal peaks.
+
+**Recommendations:**
+
+* Improve quality for Electronics via post-sale checks.
+* Diversify supplier network; promote mid-tier brands.
+* Gender-focused campaigns to grow female engagement.
+* Plan inventory around March–April & Aug–Oct peaks.
+
+<img width="1336" height="749" alt="image" src="https://github.com/user-attachments/assets/b043ba7f-0ce1-49d5-855c-cc034f447d5c" />
+
+
+---
+
+### 🔵 **Dashboard 4 – Operational & Feedback Insights**
+
+**Purpose:** Evaluate delivery, payment, and customer feedback performance.
+
+**Key KPIs:**
+
+* Avg Rating: 3.17★
+* Avg Delivery Score: 1.97
+* Excellent Feedback: 33%
+* Night Orders (9PM–5AM): 59K
+
+**RCA Summary:**
+
+* Bad feedback linked to Delivered orders → packaging/quality issues.
+* Same-Day & Express shipments preferred (high demand).
+* Peak orders at night → need for late-hour service support.
+
+**Recommendations:**
+
+* Conduct post-delivery satisfaction checks.
+* Strengthen courier tie-ups for express deliveries.
+* Introduce reward points for digital payments.
+* Schedule promotions & support availability during night hours.
+
+<img width="1337" height="750" alt="image" src="https://github.com/user-attachments/assets/b808c09a-8cf1-456f-bdb3-b37918429a65" />
+
+
+---
+
+## 📈 **Overall Business Impact**
+
+* Unified view of sales, customer, product, and feedback data.
+* Identified key revenue drivers and underperforming regions.
+* Improved understanding of customer loyalty & feedback trends.
+* Enabled data-driven marketing and logistics decisions.
+
+---
+
+## 🔍 **Key Learnings**
+
+* Hands-on experience with complete analytics workflow (Python → SQL → Power BI).
+* Improved understanding of data modeling, DAX calculations, and storytelling.
+* Developed ability to translate data into actionable business strategies.
+
+---
+
+## ⚠️ **Project Limitations**
+
+* Dataset limited to 5 countries (US, UK, Germany, Canada, Australia).
+* No real-time data updates — historic snapshot only.
+* Customer and product inconsistencies required manual cleaning.
+* DAX delivery scoring is an estimate, not real courier tracking.
+* Power BI performance tuned for 3L rows — not yet enterprise-scaled.
+
+---
+
+## 🚀 **Future Scope**
+
+* Integrate ML models for demand & sales prediction (Python → Power BI).
+* Automate dashboard refresh via Power Automate.
+* Include live streaming data from e-commerce APIs.
+* Build mobile-responsive Power BI reports.
+
+---
+
+## 📁 **Folder Structure**
+
+```
+📦 Retail_Analytics_Project
+│
+├── 📂 Extra notes for my reference        # Viva and explanation prep (personal use)
+├── 📂 images                              # Dashboard backgrounds & visuals
+├── 📂 PPT and final report                # Project PPT & final written report
+│
+├── 🧾 new_retail_data.csv                 # Raw Kaggle dataset (~3 lakh records)
+├── 🧾 df_full_cleaned.csv                 # Cleaned dataset (Phase 1 output)
+├── 🧾 df_time_cleaned.csv                 # Time-transformed dataset (Phase 2 output)
+├── 🧾 output_*.csv                        # SQL query outputs used for Power BI modeling
+│
+├── 📊 retail_analysis_dashboard.pbix      # Final Power BI dashboard file
+├── 🧠 sample_retail_sales.ipynb           # Python + SQL notebook
+├── 🧰 retail.sqlite / retail_analytics.db # SQLite databases
+│
+└── 📄 README.md                           # Project documentation (this file)
+```
+
+---
+
+## 🧾 **Citation**
+
+Dataset Source:
+
+> Kaggle – Retail Transactional Dataset by Bhavik Jikadara
+> [https://www.kaggle.com/datasets/bhavikjikadara/retail-transactional-dataset](https://www.kaggle.com/datasets/bhavikjikadara/retail-transactional-dataset)
+
+---
+
+✅ **Final Note:**
+This project demonstrates the **complete data analytics lifecycle** — from data cleaning and EDA in Python to SQL integration and advanced Power BI dashboards — resulting in a **360° retail analytics solution** that connects customer behavior, product performance, and operational efficiency in one interactive system.
+
+
