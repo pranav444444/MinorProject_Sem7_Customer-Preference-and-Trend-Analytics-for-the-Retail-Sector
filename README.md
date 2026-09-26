@@ -139,7 +139,8 @@ The date parsing logic was updated to:
 * Continue regional marketing analysis across the USA, UK, Germany, Canada, and Australia.
 * Use city-level revenue trends to identify high-value markets for targeted campaigns.
 
-<img width="1340" height="751" alt="image" src="https://github.com/user-attachments/assets/843742e4-f1f8-4412-81cb-3089e938d096" />
+<img width="1204" height="672" alt="Screenshot 2026-09-27 012906" src="https://github.com/user-attachments/assets/1eee42fe-06ea-4e2c-bb36-f3b597d74282" />
+
 
 
 ---
@@ -171,7 +172,8 @@ The date parsing logic was updated to:
 * Focus digital campaigns on the largest age and income segments.
 * Analyze Premium customers separately to identify opportunities for increasing customer value.
 
-<img width="1338" height="747" alt="image" src="https://github.com/user-attachments/assets/7f002e7e-4d88-4ff9-a6ff-08a6158f4045" />
+<img width="1209" height="678" alt="Screenshot 2026-09-27 012922" src="https://github.com/user-attachments/assets/fb0d0918-d792-4489-ba62-4d7d7af36666" />
+
 
 
 ---
@@ -203,7 +205,8 @@ The date parsing logic was updated to:
 * Use category-level and gender-level analysis to develop targeted marketing campaigns.
 * Align inventory planning with category demand and observed monthly trends.
 
-<img width="1336" height="749" alt="image" src="https://github.com/user-attachments/assets/b043ba7f-0ce1-49d5-855c-cc034f447d5c" />
+<img width="1214" height="680" alt="Screenshot 2026-09-27 013010" src="https://github.com/user-attachments/assets/ea8ad059-99b8-403c-b034-3f185f2b5747" />
+
 
 
 ---
@@ -237,7 +240,8 @@ The date parsing logic was updated to:
 * Schedule promotions and support availability during high-volume night hours.
 * Track rating distributions to identify opportunities for product and service quality improvement.
 
-<img width="1337" height="750" alt="image" src="https://github.com/user-attachments/assets/b808c09a-8cf1-456f-bdb3-b37918429a65" />
+<img width="1208" height="674" alt="Screenshot 2026-09-27 013046" src="https://github.com/user-attachments/assets/36d31bd8-8c0b-49bc-bfb7-932f364e65d6" />
+
 
 
 ---
